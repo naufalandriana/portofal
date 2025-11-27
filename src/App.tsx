@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import ScrollToTop from './components/ScrollToTop';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -9,6 +10,7 @@ import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Certification from './pages/Certification';
+
 
 function App() {
   useEffect(() => {
@@ -21,6 +23,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="bg-primary text-gray-100 font-poppins overflow-x-hidden">
         <Navbar />
         <Routes>
