@@ -228,9 +228,9 @@ function Home() {
                   href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=mr.naufalandriana@gmail.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 glow-effect hover:-translate-y-1"
+                  className="inline-flex justify-center items-center gap-3 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 glow-effect hover:-translate-y-1"
                 >
-                  <i className="ph ph-envelope mr-2"></i>
+                  <i className="ph ph-envelope"></i>
                   <span> Contact Me</span>
                 </a>
               </div>
