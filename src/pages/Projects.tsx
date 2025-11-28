@@ -65,12 +65,12 @@ function Projects() {
       icon: "ph-layout"
     },
     {
-      title: "VPN Server Setup",
+      title: "MikroTik VPN Server Setup",
       category: "Networking",
       description: "Secure VPN infrastructure with MikroTik RouterOS, supporting multiple protocols and user management.",
       image: "/assets/project4.jpg",
-      tech: ["MikroTik", "OpenVPN", "IPSec", "L2TP"],
-      github: null,
+      tech: ["MikroTik", "Wireguard", "IPSec", "L2TP"],
+      github: "https://github.com/naufalandriana/MikroTik-VPN",
       demo: null,
       icon: "ph-lock"
     },
