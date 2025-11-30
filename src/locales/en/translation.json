@@ -1,0 +1,298 @@
+{
+  "hero": {
+    "badge": "Fullstack Developer | Network Engineer | Sysadmin",
+    "greeting": "Hi, I'm",
+    "name": "Naufal Andriana",
+    "description": "Looking for freelance opportunities 👀. Passionate about front-end and networking. Skilled in full stack & sysadmin. Mikrotik and Cisco certified.",
+    "viewResume": "View Resume",
+    "getInTouch": "Get in Touch"
+  },
+  "about": {
+    "titleGradient": "About ",
+    "title": "Me",
+    "subtitle": "Tech enthusiast bridging code & connectivity.",
+    "description": "Hi! I'm {{name}} — a Network Engineer and Fullstack Developer who loves building reliable systems. Certified by {{mikrotik}} and {{cisco}}, I blend networking, software, and problem-solving into one solid workflow.",
+    "name": "Muhammad Naufal Andriana",
+    "mikrotik": "Mikrotik",
+    "cisco": "Cisco",
+    "cards": {
+      "networking": {
+        "title": "Networking",
+        "description": "Experienced in router & switch setup, subnetting, and security configuration."
+      },
+      "fullstack": {
+        "title": "Fullstack Dev",
+        "description": "Building efficient, responsive web apps using modern frameworks."
+      },
+      "sysadmin": {
+        "title": "SysAdmin",
+        "description": "Maintaining servers, automating deployment, and ensuring uptime."
+      },
+      "problemSolver": {
+        "title": "Problem Solver",
+        "description": "Fast learner with a detail-oriented mindset and a love for challenges."
+      }
+    },
+    "cta": {
+      "title": "Want to see more details?",
+      "description": "Download my complete resume or get in touch to discuss how my certifications align with your needs.",
+      "viewResume": "View Resume",
+      "contactMe": "Contact Me"
+    }
+  },
+  "resume": {
+    "titleMy": "My",
+    "titleResume": "Resume",
+    "subtitle": "Network engineer specialized in MikroTik, Cisco, and cloud technologies",
+    "experience": {
+      "title": "Experience",
+      "previewResume": "Preview Resume",
+      "tabs": {
+        "work": {
+          "label": "Work Experience",
+          "icon": "ph-briefcase"
+        },
+        "competition": {
+          "label": "Competitions",
+          "icon": "ph-trophy"
+        }
+      },
+      "items": {
+        "trainer": {
+          "date": "May - June 2023",
+          "title": "MikroTik Trainer",
+          "company": "IDN Mengajar",
+          "location": "SMK Wikrama Garut, West Java",
+          "description": "Trained teachers to become MikroTik Academy members, covering MTCNA and MTCRE certification materials."
+        },
+        "intern": {
+          "date": "August 2024 - July 2025",
+          "title": "IT Infrastructure Intern",
+          "company": "MCS Corp",
+          "location": "Cibubur, West Java",
+          "description": "IT Infrastructure Intern at PT MCS Corp. Handling servers, networks, and creating app monitoring backup databases."
+        },
+        "freelance": {
+          "date": "September 2025 - Present",
+          "title": "Freelance Fullstack Developer",
+          "company": "Beaulytics",
+          "location": "Freelance",
+          "description": "Focus on product database management and web application development."
+        }
+      },
+      "competitions": {
+        "etime": {
+          "date": "July 2023",
+          "title": "Finalist",
+          "event": "E-TIME Competition",
+          "location": "Politeknik Negeri Jakarta",
+          "description": "Competed in networking branch and qualified for the final round."
+        },
+        "elination": {
+          "date": "October 2023",
+          "title": "Finalist",
+          "event": "ELINATION Competition",
+          "location": "Universitas Negeri Yogyakarta",
+          "description": "Successfully configured network topology to qualify as finalist."
+        },
+        "cybersecurity": {
+          "date": "October 2023",
+          "title": "Participant",
+          "event": "National Cyber Security Connected",
+          "location": "Menara Bidakara, Jakarta",
+          "description": "Attended cybersecurity event organized by BSSN, Nagayana Indonesia, and APTIKNAS."
+        },
+        "integer": {
+          "date": "October 2023",
+          "title": "Participant",
+          "event": "INTEGER Competition",
+          "location": "Undiksha University, Bali",
+          "description": "Network analysis and configuration using Cisco Packet Tracer."
+        }
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "mikrotik": {
+        "title": "MikroTik",
+        "certification": "MTCNA & MTCRE",
+        "description": "Network Associate & Routing Engineer certified with expertise in network configuration, routing protocols, and infrastructure management.",
+        "tags": ["OSPF", "Load Balancing", "Firewall & NAT", "VPN", "Wireguard", "VLAN", "Wireless"]
+      },
+      "cisco": {
+        "title": "Cisco",
+        "certification": "CCNA ITNv7",
+        "description": "Cisco Certified Network Associate with comprehensive knowledge in routing, switching, and network fundamentals.",
+        "tags": ["EIGRP", "BGP", "ACL", "Inter-VLAN", "IPv6", "Switching"]
+      },
+      "linux": {
+        "title": "Linux",
+        "certification": "Ubuntu",
+        "description": "Able to manage Linux servers, run basic commands, and deploy apps using LAMP or NGINX.",
+        "tags": ["Command Line", "LAMP Stack", "NGINX", "Server Setup", "Web Deployment"]
+      },
+      "frontend": {
+        "title": "Frontend",
+        "certification": "Web Development",
+        "description": "Skilled in building modern websites using HTML, React, Tailwind CSS, and basic JavaScript. Capable of creating creative AI-assisted web designs.",
+        "tags": ["HTML", "React", "Tailwind", "JavaScript", "AI Web Design"]
+      },
+      "backend": {
+        "title": "Backend",
+        "certification": "Web Development",
+        "description": "Skilled in backend development using PHP, MySQL, and Supabase. Experienced in deploying and hosting web applications.",
+        "tags": ["PHP", "MySQL", "Supabase", "XAMPP", "Hosting", "API"]
+      },
+      "unifi": {
+        "title": "Unifi",
+        "certification": "Access Point",
+        "description": "Experienced in resetting, configuring, and managing UniFi Access Points during internship.",
+        "tags": ["UniFi Controller", "Access Point", "Reconfiguration", "Network Setup"]
+      }
+    },
+    "education": {
+      "title": "Education",
+      "highschool": {
+        "date": "2022 - 2025",
+        "title": "Network Engineering",
+        "school": "SMK IDN Boarding School",
+        "location": "Pamijahan, Bogor",
+        "description": "Specialized in network infrastructure and administration with hands-on experience in MikroTik, Cisco, and AWS technologies."
+      },
+      "university": {
+        "date": "2025 - Present",
+        "title": "Computer Engineering",
+        "school": "Faculty of Engineering, Jenderal Soedirman University",
+        "location": "Purbalingga, Central Java",
+        "description": "First-year student learning programming fundamentals in C++ and Python, with a growing interest in networking."
+      }
+    },
+    "modal": {
+      "title": "Preview Resume",
+      "download": "Download",
+      "close": "Close"
+    }
+  },
+  "contact": {
+    "card" : {
+      "title": "Get",
+      "titleGradient": "In Touch!",
+      "description": "Let's work together!",
+      "linkedinDesc": "Connect with me",
+      "githubDesc": "Check my projects"
+    }
+  },
+  "certifications": {
+    "titleMy": "My",
+    "titleCertifications": "Certifications", 
+    "titleDescription": "Professional certifications and achievements in networking and web development",
+    "viewCertificate": "View Certificate",
+    "inProgress": "In Progress",
+    "items": {
+      "mtcna": {
+        "title": "MikroTik Certified Network Associate (MTCNA)",
+        "issuer": "MikroTik",
+        "date": "2024",
+        "description": "Network fundamentals, routing, firewall, and MikroTik RouterOS configuration",
+        "details": {
+          "skills": ["Network Configuration", "RouterOS", "Firewall Setup", "Basic Routing"],
+          "credential": "MTCNA-2023-12345"
+        }
+      },
+      "ccna": {
+        "title": "CCNA: Introduction to Networks",
+        "issuer": "Cisco", 
+        "date": "2024",
+        "description": "Network security, routing protocols, switching, and network automation",
+        "details": {
+          "skills": ["Network Security", "OSPF", "EIGRP", "Network Automation", "Switching"],
+          "credential": "CCNA-2023-67890"
+        }
+      },
+      "mtcre": {
+        "title": "MikroTik Certified Routing Engineer (MTCRE)",
+        "issuer": "MikroTik",
+        "date": "2024", 
+        "description": "Advanced routing protocols, BGP, OSPF, and network optimization",
+        "details": {
+          "skills": ["BGP Configuration", "OSPF Advanced", "Route Filtering", "Network Optimization"],
+          "credential": "MTCRE-2024-11223"
+        }
+      },
+      "aws": {
+        "title": "AWS Academy Graduate - Cloud Foundations - Training Badge",
+        "issuer": "AWS Academy",
+        "date": "2024",
+        "description": "Fundamental concepts of cloud computing and AWS services",
+        "details": {
+          "skills": ["Cloud Computing", "AWS Services", "Cloud Foundations"],
+          "credential": "AWS-2024-44556"
+        }
+      },
+      "linux": {
+        "title": "Linux Fundamental - Aguna Course", 
+        "issuer": "Linux Course",
+        "date": "2023",
+        "description": "Learn about basic command lines in Linux operating system",
+        "details": {
+          "skills": ["Linux Commands", "File System", "User Management", "Permissions"],
+          "credential": "LINUX-2023-77889"
+        }
+      },
+      "upcoming": {
+        "title": "New Certification",
+        "issuer": "Coming Soon", 
+        "date": "Expected March 2025",
+        "description": "Currently working on a new professional certification to expand my expertise"
+      }
+    }
+  },
+  "footer": {
+    "text": "© 2025 Portofal ● All rights reserved."
+  },
+   "projects": {
+    "titleMy": "My",
+    "titleProjects": "Projects",
+    "subtitle": "A collection of my work in web development and network engineering",
+    "noProjects": "No projects found in this category",
+    "categories": ["All", "Web Development", "Networking"],
+    "items": {
+      "ecommerce": {
+        "title": "E-Commerce Platform",
+        "category": "Web Development",
+        "description": "Full-stack e-commerce platform with payment integration, inventory management, and real-time analytics.",
+        "tech": ["React", "Node.js", "MongoDB", "Stripe"]
+      },
+      "monitoring": {
+        "title": "Network Monitoring System",
+        "category": "Networking", 
+        "description": "Real-time network monitoring dashboard with automated alerts and performance analytics using SNMP.",
+        "tech": ["Python", "Flask", "Grafana", "SNMP"]
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "category": "Web Development",
+        "description": "Modern portfolio website with dark mode, smooth animations, and responsive design.",
+        "tech": ["React", "TypeScript", "Tailwind", "Vite"]
+      },
+      "vpn": {
+        "title": "MikroTik VPN Server Setup",
+        "category": "Networking",
+        "description": "Secure VPN infrastructure with MikroTik RouterOS, supporting multiple protocols and user management.",
+        "tech": ["MikroTik", "Wireguard", "IPSec", "L2TP"]
+      },
+      "taskmanager": {
+        "title": "Task Management App",
+        "category": "Web Development",
+        "description": "Collaborative task management application with real-time updates and team collaboration features.",
+        "tech": ["Next.js", "PostgreSQL", "Prisma", "Socket.io"]
+      },
+      "networkdesign": {
+        "title": "Enterprise Network Design",
+        "category": "Networking",
+        "description": "Complete network infrastructure design for enterprise with VLAN segmentation and redundancy.",
+        "tech": ["Cisco", "VLAN", "OSPF", "HSRP"]
+      }
+    }
+  }
+}

@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+  const { t } = useTranslation();
   useEffect(() => {
     // Initialize AOS
     AOS.init({
@@ -69,10 +71,10 @@ function Contact() {
             
             <div className="relative z-10">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Get in <span className="gradient-text">Touch!</span>
+                {t('contact.card.title')} <span className="gradient-text">{t('contact.card.titleGradient')}</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-400 mb-12">
-                Let's work together!
+              {t('contact.card.description')}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
@@ -87,7 +89,7 @@ function Contact() {
                       <i className="ph ph-linkedin-logo"></i>
                     </div>
                     <h3 className="text-xl font-semibold mb-2">LinkedIn</h3>
-                    <p className="text-gray-400">Connect with me</p>
+                    <p className="text-gray-400">{t('contact.card.linkedinDesc')}</p>
                   </div>
                 </a>
 
@@ -102,7 +104,7 @@ function Contact() {
                       <i className="ph ph-github-logo"></i>
                     </div>
                     <h3 className="text-xl font-semibold mb-2">GitHub</h3>
-                    <p className="text-gray-400">Check my projects</p>
+                    <p className="text-gray-400">{t('contact.card.githubDesc')}</p>
                   </div>
                 </a>
               </div>

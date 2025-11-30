@@ -1,6 +1,23 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tech: string[];
+  github: string | null;
+  demo: string | null;
+  icon: string;
+}
+
+// Nilai default untuk categories (untuk filter logic)
+const DEFAULT_CATEGORIES = ['All', 'Web Development', 'Networking'];
 
 function Projects() {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState('All');
 
   useEffect(() => {
@@ -33,71 +50,79 @@ function Projects() {
     createParticles();
   }, []);
 
-  const projects = [
+  const projects: Project[] = [
     {
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      description: "Full-stack e-commerce platform with payment integration, inventory management, and real-time analytics.",
+      id: "ecommerce",
+      title: t('projects.items.ecommerce.title'),
+      category: "Web Development", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.ecommerce.description'),
       image: "/assets/project1.jpg",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      tech: t('projects.items.ecommerce.tech', { returnObjects: true }) as string[],
       github: "https://github.com/naufalandriana",
       demo: "https://demo.com",
       icon: "ph-shopping-cart"
     },
     {
-      title: "Network Monitoring System",
-      category: "Networking",
-      description: "Real-time network monitoring dashboard with automated alerts and performance analytics using SNMP.",
+      id: "monitoring",
+      title: t('projects.items.monitoring.title'),
+      category: "Networking", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.monitoring.description'),
       image: "/assets/project2.jpg",
-      tech: ["Python", "Flask", "Grafana", "SNMP"],
+      tech: t('projects.items.monitoring.tech', { returnObjects: true }) as string[],
       github: "https://github.com/naufalandriana",
       demo: null,
       icon: "ph-monitor"
     },
     {
-      title: "Portfolio Website",
-      category: "Web Development",
-      description: "Modern portfolio website with dark mode, smooth animations, and responsive design.",
+      id: "portfolio",
+      title: t('projects.items.portfolio.title'),
+      category: "Web Development", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.portfolio.description'),
       image: "/assets/project3.jpg",
-      tech: ["React", "TypeScript", "Tailwind", "Vite"],
+      tech: t('projects.items.portfolio.tech', { returnObjects: true }) as string[],
       github: "https://github.com/naufalandriana",
       demo: "https://demo.com",
       icon: "ph-layout"
     },
     {
-      title: "MikroTik VPN Server Setup",
-      category: "Networking",
-      description: "Secure VPN infrastructure with MikroTik RouterOS, supporting multiple protocols and user management.",
+      id: "vpn",
+      title: t('projects.items.vpn.title'),
+      category: "Networking", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.vpn.description'),
       image: "/assets/project4.jpg",
-      tech: ["MikroTik", "Wireguard", "IPSec", "L2TP"],
+      tech: t('projects.items.vpn.tech', { returnObjects: true }) as string[],
       github: "https://github.com/naufalandriana/MikroTik-VPN",
       demo: null,
       icon: "ph-lock"
     },
     {
-      title: "Task Management App",
-      category: "Web Development",
-      description: "Collaborative task management application with real-time updates and team collaboration features.",
+      id: "taskmanager",
+      title: t('projects.items.taskmanager.title'),
+      category: "Web Development", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.taskmanager.description'),
       image: "/assets/project5.jpg",
-      tech: ["Next.js", "PostgreSQL", "Prisma", "Socket.io"],
+      tech: t('projects.items.taskmanager.tech', { returnObjects: true }) as string[],
       github: "https://github.com/naufalandriana",
       demo: "https://demo.com",
       icon: "ph-check-square"
     },
     {
-      title: "Enterprise Network Design",
-      category: "Networking",
-      description: "Complete network infrastructure design for enterprise with VLAN segmentation and redundancy.",
+      id: "networkdesign",
+      title: t('projects.items.networkdesign.title'),
+      category: "Networking", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.networkdesign.description'),
       image: "/assets/project6.jpg",
-      tech: ["Cisco", "VLAN", "OSPF", "HSRP"],
+      tech: t('projects.items.networkdesign.tech', { returnObjects: true }) as string[],
       github: null,
       demo: null,
       icon: "ph-network"
     }
   ];
 
-  const categories = ['All', 'Web Development', 'Networking'];
-
+  // Untuk display di UI, pakai terjemahan
+  const categories: string[] = t('projects.categories', { returnObjects: true }) as string[];
+  
+  // Untuk filter logic, pakai nilai asli
   const filteredProjects = activeFilter === 'All' 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
@@ -129,16 +154,16 @@ function Projects() {
           {/* Header */}
           <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              My <span className="gradient-text">Projects</span>
+              {t('projects.titleMy')} <span className="gradient-text">{t('projects.titleProjects')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              A collection of my work in web development and network engineering
+              {t('projects.subtitle')}
             </p>
           </div>
 
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-            {categories.map((category) => (
+            {DEFAULT_CATEGORIES.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveFilter(category)}
@@ -148,7 +173,7 @@ function Projects() {
                     : 'bg-tertiary border border-border text-gray-400 hover:border-accent hover:text-white'
                 }`}
               >
-                {category}
+                {categories[DEFAULT_CATEGORIES.indexOf(category)]}
               </button>
             ))}
           </div>
@@ -157,7 +182,7 @@ function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, index) => (
               <div 
-                key={index}
+                key={project.id}
                 className="bg-secondary border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:border-accent hover:-translate-y-2 group"
                 data-aos="zoom-in" 
                 data-aos-duration="600" 
@@ -201,7 +226,11 @@ function Projects() {
                   {/* Category Badge */}
                   <div className="inline-flex items-center gap-2 bg-tertiary border border-border rounded-full px-3 py-1 text-xs font-medium text-accent mb-3">
                     <i className="ph ph-tag"></i>
-                    {project.category}
+                    {/* Tampilkan terjemahan category */}
+                    {project.category === 'Web Development' 
+                      ? categories[1] 
+                      : categories[2]
+                    }
                   </div>
 
                   {/* Title */}
@@ -234,7 +263,7 @@ function Projects() {
           {filteredProjects.length === 0 && (
             <div className="text-center py-20" data-aos="fade-up">
               <i className="ph ph-folder-open text-6xl text-gray-600 mb-4"></i>
-              <p className="text-xl text-gray-400">No projects found in this category</p>
+              <p className="text-xl text-gray-400">{t('projects.noProjects')}</p>
             </div>
           )}
         </div>

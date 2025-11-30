@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -20,68 +23,74 @@ const Navbar = () => {
           Portofal
         </Link>
         
-        <ul className="hidden md:flex space-x-8">
-          <li>
-            <Link 
-              to="/" 
-              className={`${
-                isActive('/') 
-                  ? 'text-accent' 
-                  : 'text-gray-400 hover:text-gray-100'
-              } transition-colors duration-300 flex items-center gap-2`}
-            >
-              <i className="ph ph-house"></i> Home
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/resume" 
-              className={`${
-                isActive('/resume') 
-                  ? 'text-accent' 
-                  : 'text-gray-400 hover:text-gray-100'
-              } transition-colors duration-300 flex items-center gap-2`}
-            >
-              <i className="ph ph-file-text"></i> Resume
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/certifications" 
-              className={`${
-                isActive('/certifications') 
-                  ? 'text-accent' 
-                  : 'text-gray-400 hover:text-gray-100'
-              } transition-colors duration-300 flex items-center gap-2`}
-            >
-              <i className="ph ph-certificate"></i> Certifications
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/projects" 
-              className={`${
-                isActive('/projects') 
-                  ? 'text-accent' 
-                  : 'text-gray-400 hover:text-gray-100'
-              } transition-colors duration-300 flex items-center gap-2`}
-            >
-              <i className="ph ph-code"></i> Projects
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/contact" 
-              className={`${
-                isActive('/contact') 
-                  ? 'text-accent' 
-                  : 'text-gray-400 hover:text-gray-100'
-              } transition-colors duration-300 flex items-center gap-2`}
-            >
-              <i className="ph ph-envelope"></i> Contact
-            </Link>
-          </li>
-        </ul>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex space-x-8">
+            <li>
+              <Link 
+                to="/" 
+                className={`${
+                  isActive('/') 
+                    ? 'text-accent' 
+                    : 'text-gray-400 hover:text-gray-100'
+                } transition-colors duration-300 flex items-center gap-2`}
+              >
+                <i className="ph ph-house"></i> {t('nav.home', 'Home')}
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/resume" 
+                className={`${
+                  isActive('/resume') 
+                    ? 'text-accent' 
+                    : 'text-gray-400 hover:text-gray-100'
+                } transition-colors duration-300 flex items-center gap-2`}
+              >
+                <i className="ph ph-file-text"></i> {t('nav.resume', 'Resume')}
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/certifications" 
+                className={`${
+                  isActive('/certifications') 
+                    ? 'text-accent' 
+                    : 'text-gray-400 hover:text-gray-100'
+                } transition-colors duration-300 flex items-center gap-2`}
+              >
+                <i className="ph ph-certificate"></i> {t('nav.certifications', 'Certifications')}
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/projects" 
+                className={`${
+                  isActive('/projects') 
+                    ? 'text-accent' 
+                    : 'text-gray-400 hover:text-gray-100'
+                } transition-colors duration-300 flex items-center gap-2`}
+              >
+                <i className="ph ph-code"></i> {t('nav.projects', 'Projects')}
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/contact" 
+                className={`${
+                  isActive('/contact') 
+                    ? 'text-accent' 
+                    : 'text-gray-400 hover:text-gray-100'
+                } transition-colors duration-300 flex items-center gap-2`}
+              >
+                <i className="ph ph-envelope"></i> {t('nav.contact', 'Contact')}
+              </Link>
+            </li>
+          </ul>
+          
+          {/* Language Switcher - Desktop */}
+          <LanguageSwitcher />
+        </div>
         
         <button 
           className="md:hidden text-gray-100 text-xl" 
@@ -105,7 +114,7 @@ const Navbar = () => {
               } transition-colors duration-300 flex items-center gap-2 py-2 border-b border-border`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <i className="ph ph-house"></i> Home
+              <i className="ph ph-house"></i> {t('nav.home', 'Home')}
             </Link>
             <Link 
               to="/resume" 
@@ -116,7 +125,7 @@ const Navbar = () => {
               } transition-colors duration-300 flex items-center gap-2 py-2 border-b border-border`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <i className="ph ph-file-text"></i> Resume
+              <i className="ph ph-file-text"></i> {t('nav.resume', 'Resume')}
             </Link>
             <Link 
               to="/certifications" 
@@ -127,7 +136,7 @@ const Navbar = () => {
               } transition-colors duration-300 flex items-center gap-2 py-2 border-b border-border`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <i className="ph ph-certificate"></i> Certifications
+              <i className="ph ph-certificate"></i> {t('nav.certifications', 'Certifications')}
             </Link>
             <Link 
               to="/projects" 
@@ -138,7 +147,7 @@ const Navbar = () => {
               } transition-colors duration-300 flex items-center gap-2 py-2 border-b border-border`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <i className="ph ph-code"></i> Projects
+              <i className="ph ph-code"></i> {t('nav.projects', 'Projects')}
             </Link>
             <Link 
               to="/contact" 
@@ -146,11 +155,16 @@ const Navbar = () => {
                 isActive('/contact') 
                   ? 'text-accent' 
                   : 'text-gray-400 hover:text-gray-100'
-              } transition-colors duration-300 flex items-center gap-2 py-2`}
+              } transition-colors duration-300 flex items-center gap-2 py-2 border-b border-border`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <i className="ph ph-envelope"></i> Contact
+              <i className="ph ph-envelope"></i> {t('nav.contact', 'Contact')}
             </Link>
+            
+            {/* Language Switcher - Mobile */}
+            <div className="pt-4 border-t border-border">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}

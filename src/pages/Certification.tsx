@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 
 function Certification() {
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Create floating particles
@@ -34,88 +36,94 @@ function Certification() {
 
   const certifications = [
     {
-      title: "MikroTik Certified Network Associate (MTCNA)",
-      issuer: "MikroTik",
-      date: "2024",
-      iconType:"image",
+      id: "mtcna",
+      title: t('certifications.items.mtcna.title'),
+      issuer: t('certifications.items.mtcna.issuer'),
+      date: t('certifications.items.mtcna.date'),
+      iconType: "image",
       icon: "/assets/logo/mikrotik-logo.svg",
       color: "accent",
-      description: "Network fundamentals, routing, firewall, and MikroTik RouterOS configuration",
+      description: t('certifications.items.mtcna.description'),
       certificateLink: "https://mikrotik.com/training/certificates/c244584c75b9d6ab1526",
       status: "completed",
       details: {
-        skills: ["Network Configuration", "RouterOS", "Firewall Setup", "Basic Routing"],
-        credential: "MTCNA-2023-12345"
+        skills: t('certifications.items.mtcna.details.skills', { returnObjects: true }),
+        credential: t('certifications.items.mtcna.details.credential')
       }
     },
     {
-      title: "CCNA: Introduction to Networks",
-      issuer: "Cisco",
-      date: "2024",
-      iconType:"image",
+      id: "ccna",
+      title: t('certifications.items.ccna.title'),
+      issuer: t('certifications.items.ccna.issuer'),
+      date: t('certifications.items.ccna.date'),
+      iconType: "image",
       icon: "/assets/logo/cisco-logo.svg",
       color: "success",
-      description: "Network security, routing protocols, switching, and network automation",
+      description: t('certifications.items.ccna.description'),
       certificateLink: "https://www.credly.com/badges/085f0ab7-9cd6-4ca1-8b38-58d104dc2595/public_url",
       status: "completed",
       details: {
-        skills: ["Network Security", "OSPF", "EIGRP", "Network Automation", "Switching"],
-        credential: "CCNA-2023-67890"
+        skills: t('certifications.items.ccna.details.skills', { returnObjects: true }),
+        credential: t('certifications.items.ccna.details.credential')
       }
     },
     {
-      title: "MikroTik Certified Routing Engineer (MTCRE)",
-      issuer: "MikroTik",
-      date: "2024",
-      iconType:"image",
+      id: "mtcre",
+      title: t('certifications.items.mtcre.title'),
+      issuer: t('certifications.items.mtcre.issuer'),
+      date: t('certifications.items.mtcre.date'),
+      iconType: "image",
       icon: "/assets/logo/mikrotik-logo.svg",
       color: "accent",
-      description: "Advanced routing protocols, BGP, OSPF, and network optimization",
+      description: t('certifications.items.mtcre.description'),
       certificateLink: "https://mikrotik.com/training/certificates/c249640cb60e155b1910",
       status: "completed",
       details: {
-        skills: ["BGP Configuration", "OSPF Advanced", "Route Filtering", "Network Optimization"],
-        credential: "MTCRE-2024-11223"
+        skills: t('certifications.items.mtcre.details.skills', { returnObjects: true }),
+        credential: t('certifications.items.mtcre.details.credential')
       }
     },
     {
-      title: "AWS Academy Graduate - Cloud Foundations - Training Badge",
-      issuer: "AWS Academy",
-      date: "2024",
-      iconType:"image",
+      id: "aws",
+      title: t('certifications.items.aws.title'),
+      issuer: t('certifications.items.aws.issuer'),
+      date: t('certifications.items.aws.date'),
+      iconType: "image",
       icon: "/assets/logo/aws-logo.svg",
       color: "accent",
-      description: "Fundamental concepts of cloud computing and AWS services",
+      description: t('certifications.items.aws.description'),
       certificateLink: "https://www.credly.com/earner/earned/badge/ddda805a-b914-4a74-b975-cc3c763c9568",
       status: "completed",
       details: {
-        skills: ["BGP Configuration", "OSPF Advanced", "Route Filtering", "Network Optimization"],
-        credential: "MTCRE-2024-11223"
+        skills: t('certifications.items.aws.details.skills', { returnObjects: true }),
+        credential: t('certifications.items.aws.details.credential')
       }
     },
     {
-      title: "Linux Fundamental - Aguna Course",
-      issuer: "Linux Course",
-      date: "2023",
-      iconType:"image",
+      id: "linux",
+      title: t('certifications.items.linux.title'),
+      issuer: t('certifications.items.linux.issuer'),
+      date: t('certifications.items.linux.date'),
+      iconType: "image",
       icon: "/assets/logo/linux-logo.svg",
       color: "accent",
-      description: "Learn about basic command lines in Linux operating system",
+      description: t('certifications.items.linux.description'),
       certificateLink: "https://apidev.agunacourse.com/media/media/certificate/AC-980-85268757-55.pdf",
       status: "completed",
       details: {
-        skills: ["BGP Configuration", "OSPF Advanced", "Route Filtering", "Network Optimization"],
-        credential: "MTCRE-2024-11223"
+        skills: t('certifications.items.linux.details.skills', { returnObjects: true }),
+        credential: t('certifications.items.linux.details.credential')
       }
     },
     {
-      title: "New Certification",
-      issuer: "Coming Soon",
-      date: "Expected March 2025",
+      id: "upcoming",
+      title: t('certifications.items.upcoming.title'),
+      issuer: t('certifications.items.upcoming.issuer'),
+      date: t('certifications.items.upcoming.date'),
       icon: "assets/logo/progres-icon.svg",
-      iconType:"image",
+      iconType: "image",
       color: "accent",
-      description: "Currently working on a new professional certification to expand my expertise",
+      description: t('certifications.items.upcoming.description'),
       certificateLink: null,
       status: "in-progress",
       details: {
@@ -152,10 +160,10 @@ function Certification() {
           {/* Header */}
           <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              My <span className="gradient-text">Certifications</span>
+              {t('certifications.titleMy')} <span className="gradient-text">{t('certifications.titleCertifications')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              Professional certifications validating my expertise in networking and technology
+              {t('certifications.titleDescription')}
             </p>
           </div>
 
@@ -163,7 +171,7 @@ function Certification() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
               <div 
-                key={index}
+                key={cert.id}
                 className="bg-secondary border border-border rounded-2xl p-6 transition-all duration-300 hover:border-accent hover:-translate-y-2 group relative overflow-hidden"
                 data-aos="zoom-in" 
                 data-aos-duration="600" 
@@ -220,12 +228,12 @@ function Certification() {
                       className="w-full bg-tertiary hover:bg-accent border border-border hover:border-accent text-gray-100 hover:text-white px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2"
                     >
                       <i className="ph ph-arrow-square-out"></i>
-                      <span>View Certificate</span>
+                      <span>{t('certifications.viewCertificate')}</span>
                     </a>
                   ) : (
                     <div className="w-full bg-gradient-to-r from-accent/10 to-success/10 border border-accent/50 text-accent px-4 py-2 rounded-xl font-medium flex items-center justify-center gap-2">
                       <i className="ph ph-hourglass-medium"></i>
-                      <span>In Progress</span>
+                      <span>{t('certifications.inProgress')}</span>
                     </div>
                   )}
                 </div>

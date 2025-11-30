@@ -1,0 +1,298 @@
+{
+  "hero": {
+    "badge": "Fullstack Developer | Network Engineer | Sysadmin",
+    "greeting": "Hai, saya",
+    "name": "Naufal Andriana",
+    "description": "Mencari peluang freelance 👀. Passionate di front-end dan networking. Berpengalaman di full stack & sysadmin. Tersertifikasi Mikrotik dan Cisco.",
+    "viewResume": "Lihat Resume",
+    "getInTouch": "Hubungi Saya"
+  },
+  "about": {
+    "titleGradient": "Tentang ",
+    "title": "Saya",
+    "subtitle": "Tech enthusiast yang menghubungkan kode & konektivitas.",
+    "description": "Hai! Saya {{name}} — seorang Network Engineer dan Fullstack Developer yang suka membangun sistem yang handal. Tersertifikasi oleh {{mikrotik}} dan {{cisco}}, saya menggabungkan networking, software, dan problem-solving dalam satu alur kerja yang solid.",
+    "name": "Muhammad Naufal Andriana",
+    "mikrotik": "Mikrotik",
+    "cisco": "Cisco",
+    "cards": {
+      "networking": {
+        "title": "Networking",
+        "description": "Berpengalaman dalam setup router & switch, subnetting, dan konfigurasi keamanan."
+      },
+      "fullstack": {
+        "title": "Fullstack Dev",
+        "description": "Membangun aplikasi web yang efisien dan responsif menggunakan framework modern."
+      },
+      "sysadmin": {
+        "title": "SysAdmin",
+        "description": "Merawat server, otomasi deployment, dan memastikan uptime."
+      },
+      "problemSolver": {
+        "title": "Problem Solver",
+        "description": "Fast learner dengan mindset detail-oriented dan suka tantangan."
+      }
+    },
+    "cta": {
+      "title": "Ingin melihat detail lebih lanjut?",
+      "description": "Unduh resume lengkap saya atau hubungi untuk membahas bagaimana sertifikasi saya selaras dengan kebutuhan Anda.",
+      "viewResume": "Lihat Resume",
+      "contactMe": "Hubungi Saya"
+    }
+  },
+  "resume": {
+    "titleMy": "Resume",
+    "titleResume": "Saya",
+    "subtitle": "Network engineer berspesialisasi dalam MikroTik, Cisco, dan teknologi cloud",
+    "experience": {
+      "title": "Pengalaman",
+      "previewResume": "Pratinjau Resume",
+      "tabs": {
+        "work": {
+          "label": "Pengalaman Kerja",
+          "icon": "ph-briefcase"
+        },
+        "competition": {
+          "label": "Kompetisi",
+          "icon": "ph-trophy"
+        }
+      },
+      "items": {
+        "trainer": {
+          "date": "Mei - Juni 2023",
+          "title": "Pelatih MikroTik",
+          "company": "IDN Mengajar",
+          "location": "SMK Wikrama Garut, Jawa Barat",
+          "description": "Melatih guru untuk menjadi anggota MikroTik Academy, mencakup materi sertifikasi MTCNA dan MTCRE."
+        },
+        "intern": {
+          "date": "Agustus 2024 - Juli 2025",
+          "title": "Magang Infrastruktur IT",
+          "company": "MCS Corp",
+          "location": "Cibubur, Jawa Barat",
+          "description": "Magang Infrastruktur IT di PT MCS Corp. Menangani server, jaringan, dan membuat aplikasi monitoring backup database."
+        },
+        "freelance": {
+          "date": "September 2025 - Sekarang",
+          "title": "Freelance Fullstack Developer",
+          "company": "Beaulytics",
+          "location": "Freelance",
+          "description": "Fokus pada manajemen database produk dan pengembangan aplikasi web."
+        }
+      },
+      "competitions": {
+        "etime": {
+          "date": "Juli 2023",
+          "title": "Finalis",
+          "event": "Kompetisi E-TIME",
+          "location": "Politeknik Negeri Jakarta",
+          "description": "Berkompetisi di cabang networking dan lolos ke babak final."
+        },
+        "elination": {
+          "date": "Oktober 2023",
+          "title": "Finalis",
+          "event": "Kompetisi ELINATION",
+          "location": "Universitas Negeri Yogyakarta",
+          "description": "Berhasil mengkonfigurasi topologi jaringan untuk lolos sebagai finalis."
+        },
+        "cybersecurity": {
+          "date": "Oktober 2023",
+          "title": "Peserta",
+          "event": "National Cyber Security Connected",
+          "location": "Menara Bidakara, Jakarta",
+          "description": "Menghadiri acara cybersecurity yang diselenggarakan oleh BSSN, Nagayana Indonesia, dan APTIKNAS."
+        },
+        "integer": {
+          "date": "Oktober 2023",
+          "title": "Peserta",
+          "event": "Kompetisi INTEGER",
+          "location": "Universitas Undiksha, Bali",
+          "description": "Analisis jaringan dan konfigurasi menggunakan Cisco Packet Tracer."
+        }
+      }
+    },
+    "skills": {
+      "title": "Keahlian",
+      "mikrotik": {
+        "title": "MikroTik",
+        "certification": "MTCNA & MTCRE",
+        "description": "Network Associate & Routing Engineer bersertifikat dengan keahlian dalam konfigurasi jaringan, protokol routing, dan manajemen infrastruktur.",
+        "tags": ["OSPF", "Load Balancing", "Firewall & NAT", "VPN", "Wireguard", "VLAN", "Wireless"]
+      },
+      "cisco": {
+        "title": "Cisco",
+        "certification": "CCNA ITNv7",
+        "description": "Cisco Certified Network Associate dengan pengetahuan komprehensif dalam routing, switching, dan fundamental jaringan.",
+        "tags": ["EIGRP", "BGP", "ACL", "Inter-VLAN", "IPv6", "Switching"]
+      },
+      "linux": {
+        "title": "Linux",
+        "certification": "Ubuntu",
+        "description": "Mampu mengelola server Linux, menjalankan perintah dasar, dan mendeploy aplikasi menggunakan LAMP atau NGINX.",
+        "tags": ["Command Line", "LAMP Stack", "NGINX", "Server Setup", "Web Deployment"]
+      },
+      "frontend": {
+        "title": "Frontend",
+        "certification": "Web Development",
+        "description": "Terampil dalam membangun website modern menggunakan HTML, React, Tailwind CSS, dan JavaScript dasar. Mampu membuat desain web kreatif berbantuan AI.",
+        "tags": ["HTML", "React", "Tailwind", "JavaScript", "AI Web Design"]
+      },
+      "backend": {
+        "title": "Backend",
+        "certification": "Web Development",
+        "description": "Terampil dalam pengembangan backend menggunakan PHP, MySQL, dan Supabase. Berpengalaman dalam mendeploy dan hosting aplikasi web.",
+        "tags": ["PHP", "MySQL", "Supabase", "XAMPP", "Hosting", "API"]
+      },
+      "unifi": {
+        "title": "Unifi",
+        "certification": "Access Point",
+        "description": "Berpengalaman dalam mereset, mengkonfigurasi, dan mengelola UniFi Access Points selama magang.",
+        "tags": ["UniFi Controller", "Access Point", "Reconfiguration", "Network Setup"]
+      }
+    },
+    "education": {
+      "title": "Pendidikan",
+      "highschool": {
+        "date": "2022 - 2025",
+        "title": "Teknik Jaringan Komputer",
+        "school": "SMK IDN Boarding School",
+        "location": "Pamijahan, Bogor",
+        "description": "Berspesialisasi dalam infrastruktur dan administrasi jaringan dengan pengalaman langsung dalam teknologi MikroTik, Cisco, dan AWS."
+      },
+      "university": {
+        "date": "2025 - Sekarang",
+        "title": "Teknik Komputer",
+        "school": "Fakultas Teknik, Universitas Jenderal Soedirman",
+        "location": "Purbalingga, Jawa Tengah",
+        "description": "Mahasiswa tahun pertama mempelajari fundamental pemrograman dalam C++ dan Python, dengan minat yang berkembang di bidang networking."
+      }
+    },
+    "modal": {
+      "title": "Pratinjau Resume",
+      "download": "Unduh",
+      "close": "Tutup"
+    }
+  },
+  "contact": {
+    "card" : {
+      "title": "Hubungi",
+      "titleGradient": "Saya!",
+      "description": "Mari kolaborasi bersama!",
+      "linkedinDesc": "Hubungkan dengan saya",
+      "githubDesc": "Lihat proyek saya"
+    }
+  },
+  "certifications": {
+    "titleMy": "Sertifikasi",
+    "titleCertifications": "Saya",
+    "titleDescription": "Sertifikasi profesional dan pencapaian dalam networking dan pengembangan web",
+    "viewCertificate": "Lihat Sertifikat",
+    "inProgress": "Dalam Proses",
+    "items": {
+      "mtcna": {
+        "title": "MikroTik Certified Network Associate (MTCNA)",
+        "issuer": "MikroTik",
+        "date": "2024", 
+        "description": "Fundamental jaringan, routing, firewall, dan konfigurasi MikroTik RouterOS",
+        "details": {
+          "skills": ["Konfigurasi Jaringan", "RouterOS", "Setup Firewall", "Routing Dasar"],
+          "credential": "MTCNA-2023-12345"
+        }
+      },
+      "ccna": {
+        "title": "CCNA: Introduction to Networks",
+        "issuer": "Cisco",
+        "date": "2024",
+        "description": "Keamanan jaringan, protokol routing, switching, dan otomasi jaringan", 
+        "details": {
+          "skills": ["Keamanan Jaringan", "OSPF", "EIGRP", "Otomasi Jaringan", "Switching"],
+          "credential": "CCNA-2023-67890"
+        }
+      },
+      "mtcre": {
+        "title": "MikroTik Certified Routing Engineer (MTCRE)",
+        "issuer": "MikroTik",
+        "date": "2024",
+        "description": "Protokol routing lanjutan, BGP, OSPF, dan optimasi jaringan",
+        "details": {
+          "skills": ["Konfigurasi BGP", "OSPF Lanjutan", "Filter Rute", "Optimasi Jaringan"],
+          "credential": "MTCRE-2024-11223"
+        }
+      },
+      "aws": {
+        "title": "AWS Academy Graduate - Cloud Foundations - Training Badge",
+        "issuer": "AWS Academy", 
+        "date": "2024",
+        "description": "Konsep fundamental cloud computing dan layanan AWS",
+        "details": {
+          "skills": ["Cloud Computing", "Layanan AWS", "Dasar Cloud"],
+          "credential": "AWS-2024-44556"
+        }
+      },
+      "linux": {
+        "title": "Linux Fundamental - Aguna Course",
+        "issuer": "Linux Course",
+        "date": "2023",
+        "description": "Mempelajari command line dasar dalam sistem operasi Linux",
+        "details": {
+          "skills": ["Perintah Linux", "Sistem File", "Manajemen User", "Permissions"],
+          "credential": "LINUX-2023-77889"
+        }
+      },
+      "upcoming": {
+        "title": "Sertifikasi Baru",
+        "issuer": "Segera Hadir",
+        "date": "Diperkirakan Maret 2025", 
+        "description": "Sedang mengerjakan sertifikasi profesional baru untuk memperluas keahlian"
+      }
+    }
+  },
+  "footer": {
+    "text": "©9 2025 Portofal ● Semua hak dilindungi."
+  },
+  "projects": {
+    "titleMy": "Proyek",
+    "titleProjects": "Saya", 
+    "subtitle": "Koleksi karya saya dalam pengembangan web dan teknik jaringan",
+    "noProjects": "Tidak ada proyek yang ditemukan dalam kategori ini",
+    "categories": ["Semua", "Pengembangan Web", "Networking"],
+    "items": {
+      "ecommerce": {
+        "title": "Platform E-Commerce",
+        "category": "Pengembangan Web",
+        "description": "Platform e-commerce full-stack dengan integrasi pembayaran, manajemen inventaris, dan analitik real-time.",
+        "tech": ["React", "Node.js", "MongoDB", "Stripe"]
+      },
+      "monitoring": {
+        "title": "Sistem Monitoring Jaringan",
+        "category": "Networking",
+        "description": "Dashboard monitoring jaringan real-time dengan peringatan otomatis dan analitik kinerja menggunakan SNMP.",
+        "tech": ["Python", "Flask", "Grafana", "SNMP"]
+      },
+      "portfolio": {
+        "title": "Website Portfolio",
+        "category": "Pengembangan Web", 
+        "description": "Website portfolio modern dengan mode gelap, animasi halus, dan desain responsif.",
+        "tech": ["React", "TypeScript", "Tailwind", "Vite"]
+      },
+      "vpn": {
+        "title": "Setup Server VPN MikroTik",
+        "category": "Networking",
+        "description": "Infrastruktur VPN yang aman dengan MikroTik RouterOS, mendukung berbagai protokol dan manajemen pengguna.",
+        "tech": ["MikroTik", "Wireguard", "IPSec", "L2TP"]
+      },
+      "taskmanager": {
+        "title": "Aplikasi Manajemen Tugas",
+        "category": "Pengembangan Web",
+        "description": "Aplikasi manajemen tugas kolaboratif dengan pembaruan real-time dan fitur kolaborasi tim.",
+        "tech": ["Next.js", "PostgreSQL", "Prisma", "Socket.io"]
+      },
+      "networkdesign": {
+        "title": "Desain Jaringan Perusahaan",
+        "category": "Networking",
+        "description": "Desain infrastruktur jaringan lengkap untuk perusahaan dengan segmentasi VLAN dan redundansi.",
+        "tech": ["Cisco", "VLAN", "OSPF", "HSRP"]
+      }
+    }
+  }
+}

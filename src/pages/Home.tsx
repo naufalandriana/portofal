@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import AOS from 'aos';
 
 function Home() {
+  const { t } = useTranslation();
+  
   useEffect(() => {
     // Initialize AOS
     AOS.init({
@@ -92,17 +95,17 @@ function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="space-y-6" data-aos="fade-right" data-aos-duration="1000">
-            <div className="inline-flex items-center gap-2 bg-tertiary border border-border rounded-full px-4 py-2 text-accent text-sm font-medium">
+            <div className="inline-flex items-cente mt-5 gap-2 bg-tertiary border border-border rounded-full px-4 py-2 text-accent text-sm font-medium">
               <i className="ph ph-check-circle"></i>
-              Fullstack Developer | Network Engineer | Sysadmin
+              {t('hero.badge')}
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Hi, I'm <span className="gradient-text typewriter" id="typewriter-text">Naufal Andriana</span>
+              {t('hero.greeting')} <span className="gradient-text typewriter" id="typewriter-text">{t('hero.name')}</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-400 max-w-lg">
-              Looking for freelance opportunities 👀. Passionate about front-end and networking. Skilled in full stack & sysadmin. Mikrotik and Cisco certified.
+              {t('hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -110,19 +113,19 @@ function Home() {
                 href="/resume" 
                 className="bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 glow-effect hover:-translate-y-1"
               >
-                <span>View Resume</span>
+                <span>{t('hero.viewResume')}</span>
                 <i className="ph ph-arrow-right"></i>
               </a>
               <a 
                 href="/contact" 
                 className="border border-border hover:border-accent bg-transparent text-gray-100 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center hover:-translate-y-1"
               >
-                Get in Touch
+                {t('hero.getInTouch')}
               </a>
             </div>
           </div>
           
-          <div className="relative flex justify-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div className="relative mb-5 flex justify-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Animated background glow */}
               <div className="absolute inset-0 gradient-bg rounded-3xl opacity-10 animate-pulse-glow"></div>
@@ -165,13 +168,17 @@ function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">Tech enthusiast bridging code & connectivity.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4"><span className="text-gradient">{t('about.titleGradient')}</span>{t('about.title')}</h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">{t('about.subtitle')}</p>
           </div>
           
           <div className="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
             <p className="text-lg text-gray-400 text-center mb-12">
-              Hi! I'm <strong className="text-gray-100">Muhammad Naufal Andriana</strong> – a Network Engineer and Fullstack Developer who loves building reliable systems. Certified by <strong className="text-gray-100">Mikrotik</strong> and <strong className="text-gray-100">Cisco</strong>, I blend networking, software, and problem-solving into one solid workflow.
+              {t('about.description', { 
+                name: t('about.name'), 
+                mikrotik: t('about.mikrotik'), 
+                cisco: t('about.cisco') 
+              })}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -179,42 +186,42 @@ function Home() {
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-4">
                   <i className="ph ph-network"></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Networking</h3>
-                <p className="text-gray-400">Experienced in router & switch setup, subnetting, and security configuration.</p>
+                <h3 className="text-xl font-semibold mb-2">{t('about.cards.networking.title')}</h3>
+                <p className="text-gray-400">{t('about.cards.networking.description')}</p>
               </div>
               
               <div className="bg-tertiary border border-border rounded-2xl p-6 transition-all duration-300 hover:border-accent hover:-translate-y-2" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-4">
                   <i className="ph ph-code"></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Fullstack Dev</h3>
-                <p className="text-gray-400">Building efficient, responsive web apps using modern frameworks.</p>
+                <h3 className="text-xl font-semibold mb-2">{t('about.cards.fullstack.title')}</h3>
+                <p className="text-gray-400">{t('about.cards.fullstack.description')}</p>
               </div>
               
               <div className="bg-tertiary border border-border rounded-2xl p-6 transition-all duration-300 hover:border-accent hover:-translate-y-2" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-4">
                   <i className="ph ph-gear-six"></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">SysAdmin</h3>
-                <p className="text-gray-400">Maintaining servers, automating deployment, and ensuring uptime.</p>
+                <h3 className="text-xl font-semibold mb-2">{t('about.cards.sysadmin.title')}</h3>
+                <p className="text-gray-400">{t('about.cards.sysadmin.description')}</p>
               </div>
               
               <div className="bg-tertiary border border-border rounded-2xl p-6 transition-all duration-300 hover:border-accent hover:-translate-y-2" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-4">
                   <i className="ph ph-lightbulb"></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Problem Solver</h3>
-                <p className="text-gray-400">Fast learner with a detail-oriented mindset and a love for challenges.</p>
+                <h3 className="text-xl font-semibold mb-2">{t('about.cards.problemSolver.title')}</h3>
+                <p className="text-gray-400">{t('about.cards.problemSolver.description')}</p>
               </div>
             </div>
 
             <div className="mt-16 text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
             <div className="bg-secondary border border-border rounded-2xl p-8 md:p-12 inline-block">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Want to see more details?
+                {t('about.cta.title')}
               </h3>
               <p className="text-gray-400 mb-6 max-w-md">
-                Download my complete resume or get in touch to discuss how my certifications align with your needs.
+                {t('about.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
@@ -222,16 +229,15 @@ function Home() {
                   className="bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 glow-effect hover:-translate-y-1"
                 >
                   <i className="ph ph-file-text"></i>
-                  <span>View Resume</span>
+                  <span>{t('about.cta.viewResume')}</span>
                 </a>
                 <a 
-                  href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=mr.naufalandriana@gmail.com" 
+                  href="https://wa.me/6282111726412?text=Haii%20Naufal%20Andriana..%20saya%20ingin%20bertanya%20sesuatu!!" 
                   target="_blank" 
-                  rel="noopener noreferrer"
                   className="inline-flex justify-center items-center gap-3 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 glow-effect hover:-translate-y-1"
                 >
                   <i className="ph ph-envelope"></i>
-                  <span> Contact Me</span>
+                  <span>{t('about.cta.contactMe')}</span>
                 </a>
               </div>
             </div>
