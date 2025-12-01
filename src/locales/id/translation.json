@@ -239,6 +239,16 @@
           "credential": "LINUX-2023-77889"
         }
       },
+      "ai": {
+        "title": "Belajaar Dasar AI - Dicoding Academy", 
+        "issuer": "Ai Course",
+        "date": "2025",
+        "description": "AI & ML Fundamentals: memahami dasar AI, data processing, ML, dan basic Deep Learning.",
+        "details": {
+          "skills": ["AI", "Machine Learning", "Deep Learning", "Data","Generative AI"],
+          "credential": "AI-2025-JMZVV88R3ZN9"
+        }
+      },
       "upcoming": {
         "title": "Sertifikasi Baru",
         "issuer": "Segera Hadir",

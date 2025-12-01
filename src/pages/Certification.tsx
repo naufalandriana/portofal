@@ -116,6 +116,22 @@ function Certification() {
       }
     },
     {
+      id: "ai",
+      title: t('certifications.items.ai.title'),
+      issuer: t('certifications.items.ai.issuer'),
+      date: t('certifications.items.ai.date'),
+      iconType: "image",
+      icon: "/assets/logo/dicoding-logo.svg",
+      color: "accent",
+      description: t('certifications.items.ai.description'),
+      certificateLink: "https://www.dicoding.com/certificates/JMZVV88R3ZN9",
+      status: "completed",
+      details: {
+        skills: t('certifications.items.ai.details.skills', { returnObjects: true }),
+        credential: t('certifications.items.ai.details.credential')
+      }
+    },
+    {
       id: "upcoming",
       title: t('certifications.items.upcoming.title'),
       issuer: t('certifications.items.upcoming.issuer'),
