@@ -267,20 +267,20 @@
     "noProjects": "No projects found in this category",
     "categories": ["All", "Web Development", "Networking"],
     "items": {
-      "ecommerce": {
-        "title": "E-Commerce Platform",
-        "category": "Web Development",
-        "description": "Full-stack e-commerce platform with payment integration, inventory management, and real-time analytics.",
-        "tech": ["React", "Node.js", "MongoDB", "Stripe"]
+      "portofal": {
+        "title": "Portofal",
+        "category": "Web Portofolio",
+        "description": "Modern portfolio website with dark mode, smooth animations, and responsive design",
+        "tech": ["React", "Typescript", "Tailwind"]
       },
       "monitoring": {
         "title": "Network Monitoring System",
         "category": "Networking", 
-        "description": "Real-time network monitoring dashboard with automated alerts and performance analytics using SNMP.",
-        "tech": ["Python", "Flask", "Grafana", "SNMP"]
+        "description": "PHP-based real-time network monitoring dashboard to monitor network performance and ensure that SQL database backups from the server to the NAS are running properly via FTP.",
+        "tech": ["PHP", "FTP"]
       },
-      "portfolio": {
-        "title": "Portfolio Website",
+      "POS": {
+        "title": "POSezy",
         "category": "Web Development",
         "description": "Modern portfolio website with dark mode, smooth animations, and responsive design.",
         "tech": ["React", "TypeScript", "Tailwind", "Vite"]
@@ -301,7 +301,7 @@
         "title": "Enterprise Network Design",
         "category": "Networking",
         "description": "Complete network infrastructure design for enterprise with VLAN segmentation and redundancy.",
-        "tech": ["Cisco", "VLAN", "OSPF", "HSRP"]
+        "tech": ["MikroTik", "Figma", "Draw IO", "Ms Word"]
       }
     }
   }

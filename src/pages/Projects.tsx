@@ -50,50 +50,51 @@ function Projects() {
     createParticles();
   }, []);
 
+  function ProjectImage({ project }: { project: Project }) {
+  const [imgError, setImgError] = useState(false);
+
+  if (!project.image || imgError) {
+    // DEFAULT VIEW (yang sekarang kamu pakai)
+    return (
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-success/20 flex items-center justify-center">
+        <i className={`ph ${project.icon} text-6xl text-accent/30`}></i>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={project.image}
+      alt={project.title}
+      className="w-full h-full object-cover transition-opacity duration-500"
+      onError={() => setImgError(true)}
+    />
+  );
+}
+
+
   const projects: Project[] = [
     {
-      id: "ecommerce",
-      title: t('projects.items.ecommerce.title'),
+      id: "portofal",
+      title: t('projects.items.portofal.title'),
       category: "Web Development", // Tetap pakai nilai asli untuk filter
-      description: t('projects.items.ecommerce.description'),
-      image: "/assets/project1.jpg",
-      tech: t('projects.items.ecommerce.tech', { returnObjects: true }) as string[],
+      description: t('projects.items.portofal.description'),
+      image: "/assets/project/web/portofal.png",
+      tech: t('projects.items.portofal.tech', { returnObjects: true }) as string[],
       github: "https://github.com/naufalandriana",
-      demo: "https://demo.com",
+      demo: "/",
       icon: "ph-shopping-cart"
     },
     {
-      id: "monitoring",
-      title: t('projects.items.monitoring.title'),
-      category: "Networking", // Tetap pakai nilai asli untuk filter
-      description: t('projects.items.monitoring.description'),
-      image: "/assets/project2.jpg",
-      tech: t('projects.items.monitoring.tech', { returnObjects: true }) as string[],
-      github: "https://github.com/naufalandriana",
-      demo: null,
-      icon: "ph-monitor"
-    },
-    {
-      id: "portfolio",
-      title: t('projects.items.portfolio.title'),
+      id: "POS",
+      title: t('projects.items.POS.title'),
       category: "Web Development", // Tetap pakai nilai asli untuk filter
-      description: t('projects.items.portfolio.description'),
-      image: "/assets/project3.jpg",
-      tech: t('projects.items.portfolio.tech', { returnObjects: true }) as string[],
+      description: t('projects.items.POS.description'),
+      image: "/assets/project/",
+      tech: t('projects.items.POS.tech', { returnObjects: true }) as string[],
       github: "https://github.com/naufalandriana",
       demo: "https://demo.com",
       icon: "ph-layout"
-    },
-    {
-      id: "vpn",
-      title: t('projects.items.vpn.title'),
-      category: "Networking", // Tetap pakai nilai asli untuk filter
-      description: t('projects.items.vpn.description'),
-      image: "/assets/project4.jpg",
-      tech: t('projects.items.vpn.tech', { returnObjects: true }) as string[],
-      github: "https://github.com/naufalandriana/MikroTik-VPN",
-      demo: null,
-      icon: "ph-lock"
     },
     {
       id: "taskmanager",
@@ -107,11 +108,33 @@ function Projects() {
       icon: "ph-check-square"
     },
     {
+      id: "vpn",
+      title: t('projects.items.vpn.title'),
+      category: "Networking", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.vpn.description'),
+      image: "/assets/project/networking/vpn.svg",
+      tech: t('projects.items.vpn.tech', { returnObjects: true }) as string[],
+      github: "https://github.com/naufalandriana/MikroTik-VPN",
+      demo: null,
+      icon: "ph-lock"
+    },
+    {
+      id: "monitoring",
+      title: t('projects.items.monitoring.title'),
+      category: "Networking", // Tetap pakai nilai asli untuk filter
+      description: t('projects.items.monitoring.description'),
+      image: "/assets/project/networking/monitoring.svg",
+      tech: t('projects.items.monitoring.tech', { returnObjects: true }) as string[],
+      github: "https://github.com/naufalandriana/Dashboard-Monitoring",
+      demo: null,
+      icon: "ph-monitor"
+    },
+    {
       id: "networkdesign",
       title: t('projects.items.networkdesign.title'),
       category: "Networking", // Tetap pakai nilai asli untuk filter
       description: t('projects.items.networkdesign.description'),
-      image: "/assets/project6.jpg",
+      image: "/assets/project/networking/topologi.svg",
       tech: t('projects.items.networkdesign.tech', { returnObjects: true }) as string[],
       github: null,
       demo: null,
@@ -190,10 +213,7 @@ function Projects() {
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-tertiary overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-success/20 flex items-center justify-center">
-                    <i className={`ph ${project.icon} text-6xl text-accent/30`}></i>
-                  </div>
-                  
+                   <ProjectImage project={project} />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
                     {project.github && (

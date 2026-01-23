@@ -267,19 +267,19 @@
     "noProjects": "Tidak ada proyek yang ditemukan dalam kategori ini",
     "categories": ["Semua", "Pengembangan Web", "Networking"],
     "items": {
-      "ecommerce": {
-        "title": "Platform E-Commerce",
+      "portofal": {
+        "title": "Portofal",
         "category": "Pengembangan Web",
-        "description": "Platform e-commerce full-stack dengan integrasi pembayaran, manajemen inventaris, dan analitik real-time.",
-        "tech": ["React", "Node.js", "MongoDB", "Stripe"]
+        "description": "Website portfolio modern dengan mode gelap, animasi halus, dan desain responsif.",
+        "tech": ["React", "Typescript", "Tailwind"]
       },
       "monitoring": {
         "title": "Sistem Monitoring Jaringan",
         "category": "Networking",
-        "description": "Dashboard monitoring jaringan real-time dengan peringatan otomatis dan analitik kinerja menggunakan SNMP.",
-        "tech": ["Python", "Flask", "Grafana", "SNMP"]
+        "description": "Dashboard monitoring jaringan real-time berbasis PHP untuk memantau performa jaringan serta memastikan backup database SQL dari server ke NAS berjalan dengan baik melalui FTP.",
+        "tech": ["PHP", "FTP"]
       },
-      "portfolio": {
+      "POS": {
         "title": "Website Portfolio",
         "category": "Pengembangan Web", 
         "description": "Website portfolio modern dengan mode gelap, animasi halus, dan desain responsif.",
@@ -301,7 +301,7 @@
         "title": "Desain Jaringan Perusahaan",
         "category": "Networking",
         "description": "Desain infrastruktur jaringan lengkap untuk perusahaan dengan segmentasi VLAN dan redundansi.",
-        "tech": ["Cisco", "VLAN", "OSPF", "HSRP"]
+        "tech": ["MikroTik", "Figma", "Draw IO", "Ms Word"]
       }
     }
   }
