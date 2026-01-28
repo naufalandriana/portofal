@@ -18,6 +18,7 @@ i18n
         translation: idTranslation
       }
     },
+    lng: "id";,
     fallbackLng: 'en', // Bahasa default kalau ga detect
     debug: false, // Set true kalau mau liat log di console (buat debugging)
     
