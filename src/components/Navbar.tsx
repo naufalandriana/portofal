@@ -92,13 +92,19 @@ const Navbar = () => {
           <LanguageSwitcher />
         </div>
         
-        <button 
-          className="md:hidden text-gray-100 text-xl" 
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          <i className={`ph ${isMobileMenuOpen ? 'ph-x' : 'ph-list'}`}></i>
-        </button>
+        {/* Mobile Header - LanguageSwitcher + Hamburger Button */}
+        <div className="md:hidden flex items-center gap-4">
+          {/* Language Switcher - Mobile (di samping hamburger) */}
+          <LanguageSwitcher />
+          
+          <button 
+            className="text-gray-100 text-xl" 
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <i className={`ph ${isMobileMenuOpen ? 'ph-x' : 'ph-list'}`}></i>
+          </button>
+        </div>
       </div>
       
       {/* Mobile Menu */}
@@ -160,11 +166,6 @@ const Navbar = () => {
             >
               <i className="ph ph-envelope"></i> {t('nav.contact', 'Contact')}
             </Link>
-            
-            {/* Language Switcher - Mobile */}
-            <div className="pt-4 border-t border-border">
-              <LanguageSwitcher />
-            </div>
           </div>
         </div>
       )}
