@@ -29,24 +29,30 @@ function LanguageSwitcher() {
     localStorage.setItem('language', lang);
   };
 
-  const getCurrentLanguage = () => i18n.language || 'en';
+  // Ambil language dari i18n saja, jangan kasih fallback
+  const getCurrentLanguage = () => {
+    // Hanya return 'en' atau 'id' berdasarkan i18n.language
+    return i18n.language && i18n.language.startsWith('en') ? 'en' : 'id';
+  };
+
+  const currentLang = getCurrentLanguage();
 
   return (
     <button
-      onClick={() => changeLanguage(getCurrentLanguage() === 'en' ? 'id' : 'en')}
+      onClick={() => changeLanguage(currentLang === 'en' ? 'id' : 'en')}
       className="w-10 h-10 rounded-lg transition-all duration-300 flex items-center justify-center bg-tertiary hover:bg-secondary border border-border hover:border-accent relative"
-      title={`Switch to ${getCurrentLanguage() === 'en' ? 'Indonesian' : 'English'}`}
+      title={`Switch to ${currentLang === 'en' ? 'Indonesian' : 'English'}`}
     >
       {/* Current Language Flag */}
       <div className={`absolute transition-all duration-300 ${
-        getCurrentLanguage() === 'en' ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+        currentLang === 'en' ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
       }`}>
         <UKFlag />
       </div>
       
       {/* Alternative Language Flag */}
       <div className={`absolute transition-all duration-300 ${
-        getCurrentLanguage() === 'id' ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+        currentLang === 'id' ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
       }`}>
         <IndonesiaFlag />
       </div>
