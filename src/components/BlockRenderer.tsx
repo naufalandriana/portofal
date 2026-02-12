@@ -1,4 +1,4 @@
-import React, { type JSX } from 'react';
+import { type JSX } from 'react';
 
 export const BlockRenderer = ({ block, isLightMode }: { block: any, isLightMode: boolean }) => {
   
@@ -8,7 +8,6 @@ export const BlockRenderer = ({ block, isLightMode }: { block: any, isLightMode:
   const codeBg = isLightMode ? 'bg-gray-100 border-gray-200' : 'bg-[#0d1117] border-white/10';
   const codeColor = isLightMode ? 'text-pink-600' : 'text-gray-200';
   const quoteColor = isLightMode ? 'text-gray-800' : 'text-gray-200';
-  const linkColor = isLightMode ? 'text-blue-600' : 'text-accent';
 
   switch (block.type) {
     case 'header':

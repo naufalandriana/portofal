@@ -9,7 +9,7 @@ const BlogPost = () => {
   const { slug } = useParams(); 
   const navigate = useNavigate();
   const [post, setPost] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState('');
   
   const [isLightMode, setIsLightMode] = useState(false);
