@@ -282,8 +282,8 @@
       "POS": {
         "title": "POSezy",
         "category": "Web Development",
-        "description": "Modern portfolio website with dark mode, smooth animations, and responsive design.",
-        "tech": ["React", "TypeScript", "Tailwind", "Vite"]
+        "description": "POSezy is a simple yet powerful POS system designed to make managing your cashier and sales effortless and efficient",
+        "tech": ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"]
       },
       "vpn": {
         "title": "MikroTik VPN Server Setup",
@@ -291,11 +291,11 @@
         "description": "Secure VPN infrastructure with MikroTik RouterOS, supporting multiple protocols and user management.",
         "tech": ["MikroTik", "Wireguard", "IPSec", "L2TP"]
       },
-      "taskmanager": {
-        "title": "Task Management App",
+      "blog": {
+        "title": "Blog",
         "category": "Web Development",
-        "description": "Collaborative task management application with real-time updates and team collaboration features.",
-        "tech": ["Next.js", "PostgreSQL", "Prisma", "Socket.io"]
+        "description": "A modern blogging platform for sharing ideas, knowledge, and insights with a clean design and smooth user experience.",
+        "tech": ["React", "Typescript", "Tailwind", "Supabase"]
       },
       "networkdesign": {
         "title": "Enterprise Network Design",
