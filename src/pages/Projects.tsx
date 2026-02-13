@@ -90,21 +90,21 @@ function Projects() {
       title: t('projects.items.POS.title'),
       category: "Web Development", // Tetap pakai nilai asli untuk filter
       description: t('projects.items.POS.description'),
-      image: "/assets/project/",
+      image: "/assets/project/web/posezy.png",
       tech: t('projects.items.POS.tech', { returnObjects: true }) as string[],
-      github: "https://github.com/naufalandriana",
-      demo: "https://demo.com",
+      github: null,
+      demo: null,
       icon: "ph-layout"
     },
     {
-      id: "taskmanager",
-      title: t('projects.items.taskmanager.title'),
+      id: "blog",
+      title: t('projects.items.blog.title'),
       category: "Web Development", // Tetap pakai nilai asli untuk filter
-      description: t('projects.items.taskmanager.description'),
-      image: "/assets/project5.jpg",
-      tech: t('projects.items.taskmanager.tech', { returnObjects: true }) as string[],
-      github: "https://github.com/naufalandriana",
-      demo: "https://demo.com",
+      description: t('projects.items.blog.description'),
+      image: "/assets/project/web/blog.png",
+      tech: t('projects.items.blog.tech', { returnObjects: true }) as string[],
+      github: "https://portofal.vercel.app",
+      demo: "https://github.com/naufalandriana/portofal",
       icon: "ph-check-square"
     },
     {

@@ -280,10 +280,10 @@
         "tech": ["PHP", "FTP"]
       },
       "POS": {
-        "title": "Website Portfolio",
+        "title": "POSezy",
         "category": "Pengembangan Web", 
-        "description": "Website portfolio modern dengan mode gelap, animasi halus, dan desain responsif.",
-        "tech": ["React", "TypeScript", "Tailwind", "Vite"]
+        "description": "Sistem Point of Sale (POS) modern yang dirancang untuk membuat manajemen kasir dan penjualan menjadi mudah dan efisien.",
+        "tech": ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"]
       },
       "vpn": {
         "title": "Setup Server VPN MikroTik",
@@ -291,11 +291,11 @@
         "description": "Infrastruktur VPN yang aman dengan MikroTik RouterOS, mendukung berbagai protokol dan manajemen pengguna.",
         "tech": ["MikroTik", "Wireguard", "IPSec", "L2TP"]
       },
-      "taskmanager": {
-        "title": "Aplikasi Manajemen Tugas",
+      "blogs": {
+        "title": "Blog",
         "category": "Pengembangan Web",
-        "description": "Aplikasi manajemen tugas kolaboratif dengan pembaruan real-time dan fitur kolaborasi tim.",
-        "tech": ["Next.js", "PostgreSQL", "Prisma", "Socket.io"]
+        "description": "Platform blog modern untuk berbagi ide, pengetahuan, dan wawasan dengan desain yang bersih dan pengalaman pengguna yang lancar.",
+        "tech": ["React", "Typescript", "Tailwind", "Supabase"]
       },
       "networkdesign": {
         "title": "Desain Jaringan Perusahaan",
