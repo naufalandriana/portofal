@@ -31,18 +31,6 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex space-x-8">
-            {/* <li>
-              <Link 
-                to="/" 
-                className={`${
-                  isActive('/') 
-                    ? 'text-accent' 
-                    : 'text-gray-400 hover:text-gray-100'
-                } transition-colors duration-300 flex items-center gap-2`}
-              >
-                <i className="ph ph-house"></i> {t('nav.home', 'Home')}
-              </Link>
-            </li> */}
             <li>
               <Link 
                 to="/resume"
