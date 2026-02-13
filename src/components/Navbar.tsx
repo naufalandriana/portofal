@@ -12,14 +12,19 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Helper untuk mengecek active state
+  // Kita tambahkan logic startsWith untuk blog agar saat buka detail artikel, menu Blog tetap aktif
   const isActive = (path: string) => {
+    if (path === '/' && location.pathname !== '/') return false;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
     return location.pathname === path;
   };
 
   return (
     <nav className="fixed top-0 w-full bg-primary/95 backdrop-blur-md border-b border-border z-50 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <Link to="/" className="logo text-xl font-bold text-gray-100 flex items-center gap-2">
+        <Link to="/" 
+          className={`${isActive('/') ? 'text-accent' : 'text-gray-100'} text-xl font-bold flex items-center gap-2`}>
           Portofal
         </Link>
         
@@ -28,19 +33,7 @@ const Navbar = () => {
           <ul className="flex space-x-8">
             <li>
               <Link 
-                to="/" 
-                className={`${
-                  isActive('/') 
-                    ? 'text-accent' 
-                    : 'text-gray-400 hover:text-gray-100'
-                } transition-colors duration-300 flex items-center gap-2`}
-              >
-                <i className="ph ph-house"></i> {t('nav.home', 'Home')}
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/resume" 
+                to="/resume"
                 className={`${
                   isActive('/resume') 
                     ? 'text-accent' 
@@ -74,6 +67,19 @@ const Navbar = () => {
                 <i className="ph ph-code"></i> {t('nav.projects', 'Projects')}
               </Link>
             </li>
+            {/* --- MENU BLOG BARU --- */}
+            <li>
+              <Link 
+                to="/blog" 
+                className={`${
+                  isActive('/blog') 
+                    ? 'text-accent' 
+                    : 'text-gray-400 hover:text-gray-100'
+                } transition-colors duration-300 flex items-center gap-2`}
+              >
+                <i className="ph ph-notebook"></i> {t('nav.blog', 'Blog')}
+              </Link>
+            </li>
             <li>
               <Link 
                 to="/contact" 
@@ -94,7 +100,6 @@ const Navbar = () => {
         
         {/* Mobile Header - LanguageSwitcher + Hamburger Button */}
         <div className="md:hidden flex items-center gap-4">
-          {/* Language Switcher - Mobile (di samping hamburger) */}
           <LanguageSwitcher />
           
           <button 
@@ -154,6 +159,18 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <i className="ph ph-code"></i> {t('nav.projects', 'Projects')}
+            </Link>
+            {/* --- MENU BLOG MOBILE BARU --- */}
+            <Link 
+              to="/blog" 
+              className={`block ${
+                isActive('/blog') 
+                  ? 'text-accent' 
+                  : 'text-gray-400 hover:text-gray-100'
+              } transition-colors duration-300 flex items-center gap-2 py-2 border-b border-border`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <i className="ph ph-notebook"></i> {t('nav.blog', 'Blog')}
             </Link>
             <Link 
               to="/contact" 
