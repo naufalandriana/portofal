@@ -103,8 +103,8 @@ function Projects() {
       description: t('projects.items.blog.description'),
       image: "/assets/project/web/blog.png",
       tech: t('projects.items.blog.tech', { returnObjects: true }) as string[],
-      github: "https://portofal.vercel.app",
-      demo: "https://github.com/naufalandriana/portofal",
+      github: "https://github.com/naufalandriana/portofal",
+      demo: "https://portofal.vercel.app/blog",
       icon: "ph-check-square",
     },
     {
