@@ -10,7 +10,6 @@ import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Certification from './pages/Certification';
-import CreatePost from './pages/CreatePost';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 
@@ -34,7 +33,6 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/certifications" element={<Certification />} />
-          <Route path="/blog/create" element={<CreatePost />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
