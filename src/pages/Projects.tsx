@@ -105,7 +105,7 @@ function Projects() {
       tech: t('projects.items.blog.tech', { returnObjects: true }) as string[],
       github: "https://portofal.vercel.app",
       demo: "https://github.com/naufalandriana/portofal",
-      icon: "ph-check-square"
+      icon: "ph-check-square",
     },
     {
       id: "vpn",
