@@ -45,7 +45,7 @@ const Navbar = () => {
             </li> */}
             <li>
               <Link 
-                to="/resume" 
+                to="/resume"
                 className={`${
                   isActive('/resume') 
                     ? 'text-accent' 
