@@ -19,57 +19,46 @@ const Blog = () => {
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
-    // 1. Init AOS
     AOS.refresh();
 
-    // 2. Cek bahasa saat ini
+    // Logic Toast Bahasa
     const currentLang = i18n.language && i18n.language.startsWith('en') ? 'en' : 'id';
-    
-    // 3. Tampilkan toast jika bahasa Inggris
     if (currentLang === 'en') {
       setShowToast(true);
-      // Auto hide setelah 5 detik
-      const timer = setTimeout(() => {
-        setShowToast(false);
-      }, 5000);
-      
+      const timer = setTimeout(() => setShowToast(false), 5000);
       return () => clearTimeout(timer);
     }
 
-    // 4. Logic Partikel (Sama persis kayak Home)
+    // Logic Particles
     const createParticles = () => {
       const particlesContainer = document.getElementById('particles');
       if (!particlesContainer) return;
-      
-      // Bersihin dulu biar ga numpuk
       particlesContainer.innerHTML = '';
       
       const particleCount = 15;
-      
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
-        
         const size = Math.random() * 4 + 1;
-        const left = Math.random() * 100;
-        const animationDuration = Math.random() * 20 + 10;
-        const animationDelay = Math.random() * 5;
-        
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
-        particle.style.left = `${left}%`;
-        particle.style.animationDuration = `${animationDuration}s`;
-        particle.style.animationDelay = `${animationDelay}s`;
-        
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
         particlesContainer.appendChild(particle);
       }
     };
 
     createParticles();
+    
+    // Panggil fetch langsung
     fetchPosts();
   }, [i18n.language]);
 
   const fetchPosts = async () => {
+    // Mulai loading (hanya visual indikator, tanpa delay buatan)
+    setLoading(true);
+    
     const { data, error } = await supabase
       .from('posts')
       .select('id, slug, title, excerpt, created_at')
@@ -78,19 +67,18 @@ const Blog = () => {
     if (!error && data) {
       setPosts(data);
     }
+    // Langsung matikan loading setelah data didapat
     setLoading(false);
   };
 
   return (
     <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       
-      {/* --- BACKGROUND ANIMATION START --- */}
+      {/* --- BACKGROUND ANIMATION --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl floating-element"></div>
         <div className="absolute bottom-1/4 -right-10 w-72 h-72 bg-success/10 rounded-full blur-3xl floating-element"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl floating-element"></div>
-        
-        {/* Grid Pattern */}
         <div 
           className="absolute inset-0 opacity-10" 
           style={{ 
@@ -98,11 +86,8 @@ const Blog = () => {
             backgroundSize: '50px 50px' 
           }}
         ></div>
-        
-        {/* Particles */}
         <div className="absolute inset-0" id="particles"></div>
       </div>
-      {/* --- BACKGROUND ANIMATION END --- */}
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
@@ -114,11 +99,14 @@ const Blog = () => {
           </p>
         </div>
 
+        {/* LOADING STATE - Spinner Minimalis */}
         {loading ? (
-          <div className="text-center animate-spin">
-            <i className="ph ph-spinner text-4xl text-gray-600 mb-4"></i>
+          <div className="flex flex-col items-center justify-center py-20">
+            <i className="ph ph-spinner text-4xl text-accent animate-spin mb-4"></i>
+            <p className="text-gray-400 text-sm">Memuat artikel...</p>
           </div>
         ) : (
+          /* DATA LOADED */
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, index) => (
               <Link 
@@ -128,7 +116,6 @@ const Blog = () => {
                 data-aos="zoom-in"
                 data-aos-delay={index * 100}
               >
-                {/* Background glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="p-6 relative z-10">
@@ -173,7 +160,7 @@ const Blog = () => {
               </div>
             </div>
             <div className="flex-1">
-              <p className="text-white font-medium text-sm mb-1">Oppss..!  English Not Available</p>
+              <p className="text-white font-medium text-sm mb-1">Oppss..! English Not Available</p>
               <p className="text-gray-400 text-xs">This page is only available in Indonesian</p>
             </div>
             <button 

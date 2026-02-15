@@ -5,24 +5,20 @@ import { BlockRenderer } from '../components/BlockRenderer';
 import AOS from 'aos';
 
 const BlogPost = () => {
-  // 1. GANTI 'id' JADI 'slug'
   const { slug } = useParams(); 
   const navigate = useNavigate();
   const [post, setPost] = useState<any>(null);
-  const [, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // Default loading true
   const [errorMsg, setErrorMsg] = useState('');
   
   const [isLightMode, setIsLightMode] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
-  const [animasiSelesai, setAnimasiSelesai] = useState(false);
 
   useEffect(() => {
     AOS.refresh();
-    
-    const timer = setTimeout(() => {
-        setAnimasiSelesai(true);
-    }, 1200);
 
+    // HAPUS setTimeout untuk setAnimasiSelesai agar tidak ada delay buatan
+    
     const createParticles = () => {
       const particlesContainer = document.getElementById('particles-blog');
       if (!particlesContainer) return;
@@ -42,11 +38,10 @@ const BlogPost = () => {
     createParticles();
 
     const fetchPost = async () => {
-      // 2. CEK KALAU SLUG KOSONG
       if (!slug) return; 
       
       try {
-        // 3. QUERY BERDASARKAN KOLOM 'slug' (Bukan 'id' lagi)
+        setLoading(true); // Pastikan status loading aktif
         const { data, error } = await supabase
             .from('posts')
             .select('*')
@@ -60,14 +55,13 @@ const BlogPost = () => {
         console.error("Error fetching post:", err);
         setErrorMsg('Artikel tidak ditemukan atau link salah.');
       } finally {
-        setLoading(false);
+        setLoading(false); // Matikan loading segera setelah fetch selesai
       }
     };
 
     fetchPost();
 
-    return () => clearTimeout(timer);
-  }, [slug]); // 4. DEPENDENCY ARRAY GANTI JADI SLUG
+  }, [slug]);
 
   // Background Component
   const OuterBackground = () => (
@@ -79,7 +73,18 @@ const BlogPost = () => {
     </div>
   );
 
+  // 1. TAMPILKAN LOADING SCREEN DULUAN (Sebelum cek error/data)
+  if (loading) return (
+    <div className="min-h-screen flex flex-col items-center justify-center relative">
+        <OuterBackground/>
+        <div className="relative z-10 flex flex-col items-center gap-4">
+            <i className="ph ph-spinner text-5xl text-accent animate-spin"></i>
+            <p className="text-gray-300 font-medium tracking-wide animate-pulse">Memuat blog...</p>
+        </div>
+    </div>
+  );
 
+  // 2. BARU TAMPILKAN ERROR JIKA ADA
   if (errorMsg || !post) return (
     <div className="min-h-screen pt-32 text-center relative">
         <OuterBackground/>
@@ -163,7 +168,7 @@ const BlogPost = () => {
 
         {/* --- ARTIKEL --- */}
         <article 
-            data-aos={!animasiSelesai && !isFullScreen ? "fade-up" : ""}
+            data-aos="fade-up"
             className={`
                 relative
                 ${isFullScreen 
