@@ -65,7 +65,7 @@ const BlogPost = () => {
 
   // Background Component
   const OuterBackground = () => (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none">
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#58a6ff 1px, transparent 1px), linear-gradient(90deg, #58a6ff 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px]"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-success/10 rounded-full blur-[100px]"></div>
@@ -218,5 +218,6 @@ const BlogPost = () => {
     </div>
   );
 };
+
 
 export default BlogPost;
