@@ -15,7 +15,6 @@ const BlogPost = () => {
   const [isLightMode, setIsLightMode] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
 
-  // Background Component
   const OuterBackground = useMemo(() => {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -28,16 +27,26 @@ const BlogPost = () => {
   }, []); 
 
   useEffect(() => {
-    // AOS tetap ada untuk animasi entrance (awal buka)
-    AOS.refresh();
+    // 1. Inisialisasi AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    // 2. LOGIKA KRUSIAL: Hapus atribut data-aos setelah animasi awal selesai
+    // Ini biar pas ganti tema/full screen, AOS nggak "bangun" lagi.
+    const timer = setTimeout(() => {
+      const animatedElement = document.querySelector('[data-aos]');
+      if (animatedElement) {
+        animatedElement.removeAttribute('data-aos');
+      }
+    }, 1000); // 1 detik cukup untuk animasi fade-up awal selesai
 
     const createParticles = () => {
       const particlesContainer = document.getElementById('particles-blog');
       if (!particlesContainer || particlesContainer.childElementCount > 0) return;
-      
       const particleCount = 10; 
       const fragment = document.createDocumentFragment(); 
-
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
@@ -52,36 +61,32 @@ const BlogPost = () => {
     };
 
     requestAnimationFrame(createParticles);
+    return () => clearTimeout(timer);
+  }, []);
 
+  useEffect(() => {
     const fetchPost = async () => {
       if (!slug) return; 
-      
       setLoading(true);
       setErrorMsg('');
-
       try {
         const { data, error } = await supabase
             .from('posts')
             .select('id, title, content, created_at, slug') 
             .eq('slug', slug) 
             .single();
-
         if (error) throw error;
         if (!data) throw new Error('Artikel tidak ditemukan.');
-        
         setPost(data);
       } catch (err: any) {
-        console.error("Error fetching post:", err);
         setErrorMsg('Artikel tidak ditemukan atau link salah.');
       } finally {
         setLoading(false);
       }
     };
-
     fetchPost();
   }, [slug]); 
 
-  // --- SKELETON LOADING ---
   if (loading) {
     return (
       <div className="min-h-screen pt-32 relative font-poppins">
@@ -124,7 +129,6 @@ const BlogPost = () => {
   return (
     <div className={`min-h-screen relative font-poppins ${isFullScreen ? 'overflow-hidden' : ''}`}>
       
-      {/* Background hanya muncul jika tidak full screen */}
       {!isFullScreen && OuterBackground}
 
       <div className={`
@@ -134,7 +138,6 @@ const BlogPost = () => {
         }
       `}>
         
-        {/* --- TOOLBAR --- */}
         <div className={`
             flex justify-between items-center 
             ${isFullScreen 
@@ -142,7 +145,6 @@ const BlogPost = () => {
                 : 'mb-8 px-2'
             }
         `}>
-            {/* Tombol Back: Hover transition gapapa buat feedback user, tapi layout ga geser */}
             <button 
               onClick={() => navigate('/blog')} 
               className={`flex items-center gap-2 group ${isLightMode ? 'text-gray-600 hover:text-black' : 'text-gray-400 hover:text-white'}`}
@@ -152,7 +154,6 @@ const BlogPost = () => {
             </button>
 
             <div className="flex items-center gap-3">
-                {/* Tombol Theme: Tidak ada transition global, cuma hover state */}
                 <button
                     onClick={() => setIsLightMode(!isLightMode)}
                     className={`
@@ -167,7 +168,6 @@ const BlogPost = () => {
                     <span className="text-sm font-medium hidden sm:inline">{isLightMode ? 'Dark' : 'Light'}</span>
                 </button>
 
-                {/* Tombol Fullscreen */}
                 <button
                     onClick={() => setIsFullScreen(!isFullScreen)}
                     className={`
@@ -193,10 +193,8 @@ const BlogPost = () => {
             </div>
         </div>
 
-        {/* --- ARTIKEL --- */}
-        {/* HAPUS SEMUA CLASS: transition-all, duration-300, transition-colors */}
         <article 
-            data-aos="fade-up" 
+            data-aos="fade-up"
             className={`
                 relative
                 ${isFullScreen 
