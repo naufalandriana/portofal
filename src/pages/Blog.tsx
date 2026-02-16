@@ -73,7 +73,8 @@ const Blog = () => {
     const { data, error } = await supabase
       .from('posts')
       .select('id, slug, title, excerpt, created_at')
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(20); // OPTIMASI: Batasi 20 artikel terbaru biar enteng
 
     if (!error && data) {
       setPosts(data);
