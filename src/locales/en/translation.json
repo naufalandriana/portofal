@@ -249,6 +249,22 @@
           "credential": "AI-2025-JMZVV88R3ZN9"
         }
       },
+      "network": {
+        "title": "Fundamental of Associate Network Administrator",
+        "issuer": "Digital Talent Academy - Komdigi",
+        "date": "2026",
+        "description": "Completed foundational network administration training focused on IP addressing, wireless networking, switch configuration, and routing.",
+        "details": {
+          "skills": [
+            "IP Addressing",
+            "Wireless Networking",
+            "Network Installation",
+            "Switch Configuration",
+            "Routing",
+            "Network Administration"
+          ],
+          "credential": "21212087840-8851/DTA/BLSDM.Komdigi/2026"
+        }},
       "upcoming": {
         "title": "New Certification",
         "issuer": "Coming Soon", 
