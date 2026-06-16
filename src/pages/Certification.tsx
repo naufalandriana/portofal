@@ -132,6 +132,22 @@ function Certification() {
       }
     },
     {
+      id: "network",
+      title: t('certifications.items.network.title'),
+      issuer: t('certifications.items.network.issuer'),
+      date: t('certifications.items.network.date'),
+      iconType: "image",
+      icon: "/assets/logo/digitalent.png",
+      color: "accent",
+      description: t('certifications.items.network.description'),
+      certificateLink: "https://drive.google.com/file/d/1G2aQiJewhqU9TNB-vvQrqrKkXmQMuENp/view?usp=drive_link",
+      status: "completed",
+      details: {
+        skills: t('certifications.items.network.details.skills', { returnObjects: true }),
+        credential: t('certifications.items.network.details.credential')
+      }
+    },
+    {
       id: "upcoming",
       title: t('certifications.items.upcoming.title'),
       issuer: t('certifications.items.upcoming.issuer'),
